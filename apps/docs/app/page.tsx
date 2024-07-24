@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { Card } from "@repo/ui/card";
-import { Code } from "@repo/ui/code";
+import { Button } from "@repo/ui";
 import styles from "./page.module.css";
-import { Button } from "@repo/ui/button";
 
 function Gradient({
   conic,
@@ -13,9 +11,9 @@ function Gradient({
   conic?: boolean;
   className?: string;
 }): JSX.Element {
-  return (
+    return (
     <span
-      className={[
+    className={[
         styles.gradient,
         conic ? styles.glowConic : undefined,
         small ? styles.gradientSmall : styles.gradientLarge,
@@ -57,7 +55,8 @@ export default function Page(): JSX.Element {
       <div className={styles.description}>
         <p>
           examples/basic&nbsp;
-          <Code className={styles.code}>docs</Code>
+          {/* Code */}
+          <div className={styles.code}>docs</div>
         </p>
         <div>
           <a
@@ -77,8 +76,8 @@ export default function Page(): JSX.Element {
           </a>
         </div>
       </div>
-
-      <Button appName="docs" className={styles.button}>
+        {/* appName="docs" */}
+      <Button className={styles.button}>
         Click me!
       </Button>
 
@@ -134,9 +133,10 @@ export default function Page(): JSX.Element {
 
       <div className={styles.grid}>
         {LINKS.map(({ title, href, description }) => (
-          <Card className={styles.card} href={href} key={title} title={title}>
+            // Card, href={href}
+          <div className={styles.card} key={title} title={title}>
             {description}
-          </Card>
+          </div>
         ))}
       </div>
     </main>
