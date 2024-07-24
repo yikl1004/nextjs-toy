@@ -1,0 +1,145 @@
+{
+	// Place your jtbc-news-app-front 작업 영역 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"react-query Query Function for Getter": {
+		"prefix": "rqg",
+		"scope": "typescript",
+		"body": [
+			"import type { QueryFunction } from '@tanstack/react-query'",
+			"import type { ${1/(.*)/${1:/capitalize}/}QueryKey } from '@/service/$2'",
+			"import { request } from '@/utils/http'",
+			"",
+			"declare module '@/utils/http/response' {",
+			"    interface AppResponseList {",
+			"        '/restapi/$3': ${1/(.*)/${1:/capitalize}/}Response",
+			"    }",
+			"    interface AppPathVariables {",
+			"        '/restapi/$3': {",
+			"        }",
+			"    }",
+			"}",
+			"",
+			"export type ${1/(.*)/${1:/capitalize}/}Response = CommonResponse<${1/(.*)/${1:/capitalize}/}>",
+			"",
+			"type ${1/(.*)/${1:/capitalize}/}QueryFunction = QueryFunction<${1/(.*)/${1:/capitalize}/}Response, ${1/(.*)/${1:/capitalize}/}QueryKey>",
+			"",
+			"export type ${1/(.*)/${1:/capitalize}/}Params = {",
+			"   ",
+			"}",
+			"",
+			"export const $TM_FILENAME_BASE: ${1/(.*)/${1:/capitalize}/}QueryFunction = async ({ queryKey }) => {",
+			"    const [, params] = queryKey",
+			"    const data = await request.get('/restapi/$3', {",
+			"        params,",
+			"    })",
+			"",
+			"    return data",
+			"}",
+		],
+	},
+
+	"react-query Query Function for Setter": {
+		"prefix": "rqs",
+		"scope": "typescript",
+		"body": [
+			"import type { MutationFunction } from '@tanstack/react-query'",
+			"import { request } from '@/utils/http'",
+			"",
+			"declare module '@/utils/http/response' {",
+			"   interface AppResponseList {",
+			"       '/restapi/$2': $1Response",
+			"   }",
+			"   interface AppPathVariables {",
+			"       '/restapi/$2': {",
+			"       }",
+			"   }",
+			"}",
+			"",
+			"export type $1Response = CommonResponse<$1>",
+			"",
+			"export type $1Data = {",
+			"}",
+			"",
+			"type $1MutationFunction = MutationFunction<${1/(.*)/${1:/capitalize}/}Response, ${1/(.*)/${1:/capitalize}/}Data>",
+			"",
+			"export const $TM_FILENAME_BASE: $1MutationFunction = async ({ journalistId }) => {",
+			"   const data = await request.post('/restapi/$2', {",
+			"   })",
+			"",
+			"   return data",
+			"}",
+		],
+	},
+
+	"react-query Suspense Query Custom Hook": {
+		"prefix": "rqsqhk",
+		"scope": "typescript",
+		"body": [
+			"'use client'",
+			"",
+			"import { useSuspenseQuery } from '@tanstack/react-query'",
+			"import { $2QueryKey } from '@/query/$1'",
+			"import { get$3 } from '@/query/$1/get$3'",
+			"",
+			"type ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props = {}",
+			"",
+			"export const $TM_FILENAME_BASE = ({}: ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props) => {",
+			"    const { data, ...rest } = useSuspenseQuery({",
+			"        queryKey: $2QueryKey,",
+			"        queryFn: get$3,",
+			"    })",
+			"",
+			"    return { data, ...rest }",
+			"}",
+		],
+	},
+
+	"react-query Mutation Custom Hook": {
+		"prefix": "rqmthk",
+		"scope": "typescript",
+		"body": [
+			"'use client'",
+			"",
+			"import { useMutation } from '@tanstack/react-query'",
+			"import type { UseMutationOptions } from '@tanstack/react-query'",
+			"import { $3MutationKey } from '@/query/$2'",
+			"import { type $4Response, set$5, type $5Data } from '@/query/$4/set$5'",
+			"",
+			"type ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props = UseMutationOptions<$5Response, Error, $5Data> & $5Data",
+			"",
+			"export const $ = ({ ...restProps }: ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Props) => {",
+			"   return useMutation({",
+			"       mutationKey: $3MutationKey(journalistId),",
+			"       mutationFn: set$5,",
+			"       ...restProps,",
+			"   })",
+			"}",
+		],
+	},
+
+	"react-query Create prefetchQuery": {
+		"prefix": "rqcpq",
+		"scope": "typescript",
+		"body": [
+			"import { createPrefetchQuery } from '@/shared/utils/createPrefetchQuery'",
+			"",
+			"export const $1PrefetchQuery = (params: ${1/(.*)/${1:/capitalize}/}Params) =>",
+			"    createPrefetchQuery($1QueryKey(params), get${1/(.*)/${1:/capitalize}/})",
+		],
+	},
+}

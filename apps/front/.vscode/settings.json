@@ -1,0 +1,14 @@
+{
+	"editor.formatOnSave": true,
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.validate.enable": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit"
+	},
+	"eslint.lintTask.enable": true,
+	"eslint.run": "onSave",
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+	"eslint.format.enable": true,
+	"eslint.trace.server": "off",
+	"editor.defaultFormatter": "esbenp.prettier-vscode"
+}

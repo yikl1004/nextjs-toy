@@ -1,0 +1,34 @@
+declare namespace NodeJS {
+	// 환경 변수 정의
+	interface ProcessEnv {
+		PORT: '3100'
+
+		// # 개발서버 도메인으로 변경 필요
+		NEXT_PUBLIC_SITE_URL: string
+
+		// # for Client
+		NEXT_PUBLIC_API_MOCKING: 'disabled' | 'enabled'
+
+		// 개발용 API 도메인
+		NEXT_PUBLIC_APP_API: string
+
+		// 비디오 플레이어
+		NEXT_PUBLIC_VIDEO_PLAYER_SCRIPT_URL
+		NEXT_PUBLIC_VIDEO_PLAYER_STYLESHEET_URL
+
+		// auth
+		NEXT_PUBLIC_AUTH_COOKIE_NAME: string
+
+		// # firebase keys
+		NEXT_PUBLIC_FIREBASE_APP_ID: string
+		NEXT_PUBLIC_FIREBASE_VAPID_KEY: string
+		NEXT_PUBLIC_FIREBASE_API_KEY: string
+		NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: string
+		NEXT_PUBLIC_FIREBASE_PROJECT_ID: string
+		NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: string
+		NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: string
+		NEXT_PUBLIC_FIREBASE_PRIVATE_KEY: string
+		NEXT_PUBLIC_FIREBASE_CLIENT_EMAIL: string
+		NEXT_PUBLIC_FIREBASE_DATABASE_URL: string
+	}
+}
