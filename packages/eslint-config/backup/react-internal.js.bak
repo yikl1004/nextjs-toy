@@ -1,6 +1,6 @@
-const { resolve } = require('node:path');
+// const { resolve } = require('node:path');
 
-const project = resolve(process.cwd(), 'tsconfig.json');
+// const project = resolve(process.cwd(), 'tsconfig.json');
 
 /*
  * This is a custom ESLint configuration for use with
@@ -12,7 +12,7 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 module.exports = {
     extends: [
         'eslint:recommended',
-        'turbo',
+        'eslint-config-turbo',
         'prettier', // eslint-config-prettier prettier와 중복된 eslint 규칙 제거
         'airbnb',
         'airbnb-typescript',
@@ -31,7 +31,7 @@ module.exports = {
     settings: {
         'import/resolver': {
             typescript: {
-                project: project,
+                project: './tsconfig.json',
             },
         },
     },
