@@ -1,0 +1,35 @@
+{
+    "folders": [
+        {
+            "path": "apps/front",
+        },
+        {
+            "path": "apps/docs",
+        },
+        {
+            "path": "packages/eslint-config",
+        },
+        {
+            "path": "packages/typescript-config",
+        },
+        {
+            "path": "packages/ui",
+        },
+        {
+            "path": "packages/utils",
+        },
+        {
+            "path": "packages/prettier-config",
+        },
+        {
+            "path": "packages/hooks",
+        },
+    ],
+    "settings": {
+        "eslint.useFlatConfig": false,
+        "typescript.tsdk": "front/node_modules/typescript/lib",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "eslint.run": "onType",
+        "editor.formatOnSave": false,
+    },
+}

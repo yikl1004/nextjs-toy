@@ -1,20 +1,28 @@
 {
-  "name": "nextjs-toy",
-  "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "prettier": "^3.2.5",
-    "turbo": "latest"
-  },
-  "packageManager": "pnpm@8.9.0",
-  "engines": {
-    "node": ">=18"
-  }
+    "name": "nextjs-toy",
+    "private": true,
+    "scripts": {
+        "build": "turbo build",
+        "dev": "turbo dev",
+        "lint": "turbo lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "front": "pnpm --filter front",
+        "utils": "pnpm --filter utils",
+        "hooks": "pnpm --filter hooks",
+        "ui": "pnpm --filter ui",
+        "doc": "pnpm --filter docs"
+    },
+    "devDependencies": {
+        "@repo/eslint-config": "workspace:*",
+        "@repo/typescript-config": "workspace:*",
+        "prettier": "^3.2.5",
+        "turbo": "latest"
+    },
+    "packageManager": "pnpm@8.9.0",
+    "engines": {
+        "node": ">=18"
+    },
+    "dependencies": {
+        "typescript": "^5.5.3"
+    }
 }
