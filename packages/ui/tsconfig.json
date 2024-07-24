@@ -1,8 +1,21 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+	"extends": "@repo/typescript-config/react-library.json",
+	"compilerOptions": {
+		"outDir": "dist",
+		"declaration": true,
+		"declarationMap": true,
+		"module": "ES2020",
+		"moduleResolution": "Bundler",
+		"baseUrl": ".",
+		"jsx": "react-jsx",
+		"paths": {
+			"@demo/*": ["src/demo/*"],
+			"@style/*": ["src/style/*"],
+			"@component/*": ["src/component/*"],
+			"@icon/*": ["src/icon/*"],
+			"@typings/*": ["src/typings/*"]
+		}
+	},
+	"include": ["src", "turbo", "./tsup.config.ts"],
+	"exclude": ["node_modules", "dist"]
 }
