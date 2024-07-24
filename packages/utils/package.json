@@ -1,0 +1,49 @@
+{
+	"name": "@repo/utils",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"reqiure": "./dist/index.cjs"
+		},
+		"./emotion": {
+			"import": "./dist/emotion/index.js",
+			"require": "./dist/emotion/index.cjs"
+		},
+		"./fetch": {
+			"import": "./dist/http/index.js",
+			"reqiure": "./dist/http/index.cjs"
+		}
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"formatter": "prettier --write ./src",
+		"build": "tsup",
+		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+	},
+	"devDependencies": {
+		"@repo/eslint-config": "workspace:^",
+		"@repo/prettier-config": "workspace:^",
+		"@repo/typescript-config": "workspace:^",
+		"@types/node": "^20.11.24",
+		"@types/react": "^18.2.61",
+		"csstype": "^3.1.3",
+		"dayjs": "^1.11.11",
+		"rimraf": "^5.0.7",
+		"tsup": "^8.1.0"
+	},
+	"peerDependencies": {
+		"@emotion/react": "^11.11.4",
+		"@tanstack/react-query": "^5.40.0",
+		"dayjs": "^1.11.11",
+		"react": "^18.2.0"
+	},
+	"dependencies": {
+		"@eslint/js": "^9.5.0"
+	}
+}

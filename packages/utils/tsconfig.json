@@ -1,0 +1,12 @@
+{
+	"extends": "@repo/typescript-config/base.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"baseUrl": ".",
+		"noImplicitAny": true,
+		"module": "ES2020",
+		"moduleResolution": "node",
+		"declarationDir": "./dist"
+	},
+	"include": ["./src", "./tsup.config.ts"]
+}
