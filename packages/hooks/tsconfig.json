@@ -1,0 +1,16 @@
+{
+	"extends": "@repo/typescript-config/react-library.json",
+	"compilerOptions": {
+		"target": "ES6",
+		"moduleResolution": "Bundler",
+		"module": "ESNext",
+		"allowImportingTsExtensions": true,
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"baseUrl": ".",
+		"pretty": true,
+		"declarationDir": "./dist"
+	},
+	"include": ["src", "./tsup.config.ts"],
+	"exclude": ["node_modules", "dist"]
+}
