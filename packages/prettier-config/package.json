@@ -1,0 +1,11 @@
+{
+    "name": "@repo/prettier-config",
+    "version": "1.0.0",
+    "description": "Package for code forming",
+    "main": "index.js",
+    "keywords": [],
+    "license": "ISC",
+    "peerDependencies": {
+        "prettier": ">= 3"
+    }
+}
