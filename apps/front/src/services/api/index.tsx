@@ -1,16 +1,8 @@
 import { isServer } from '@repo/utils'
 import { HttpClient } from '@repo/utils/fetch'
 
-const getBaseURL = () => {
-	if (isServer()) {
-		return process.env.NEXT_PUBLIC_APP_API
-	}
-
-	return ''
-}
-
 export const request = new HttpClient({
-	baseURL: getBaseURL(),
+	baseURL: isServer() ? process.env.NEXT_PUBLIC_APP_API : '',
 	beforeRequest(url, { setBaseURL, setUrl }) {
 		if (url.startsWith('/mock')) {
 			setBaseURL(process.env.NEXT_PUBLIC_SITE_URL)
