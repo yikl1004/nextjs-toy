@@ -11,10 +11,10 @@ const next = require('next')
 const port = process.env.PORT || 3100
 const dev = process.env.NODE_ENV === 'development'
 
-const app = next({ dev })
-const handle = app.getRequestHandler()
+const nextApp = next({ dev })
+const handle = nextApp.getRequestHandler()
 
-app.prepare().then(() => {
+nextApp.prepare().then(() => {
 	const server = express()
 
 	server.all('*', (req, res) => {
