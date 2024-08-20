@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		/* Language and Environment */
+		"target": "ESNext",
+		"lib": ["ESNext"],
+		/* Modules */
+		"module": "ESNext",
+		"rootDir": "code",
+		"moduleResolution": "node",
+		"baseUrl": ".",
+		"resolveJsonModule": true,
+		/* JavaScript Support */
+		"allowJs": true,
+		/* Emit */
+		"outDir": "build",
+		/* Interop Constraints */
+		"verbatimModuleSyntax": false,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitAny": true,
+		/* Completeness */
+		"skipLibCheck": true
+	},
+	"ts-node": {
+		"esm": true,
+		"experimentalSpecifierResolution": "node"
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"apps": [
+		{
+			"name": "app-front",
+			"interpreter": "./node_modules/.bin/ts-node-esm",
+			"interpreter_args": "--project ./tsconfig.json",
+			"script": "./server/index.ts",
+			"args": "",
+			"cwd": "./",
+			"source_map_support": true,
+			"exec_mode": "cluster",
+			"instance": 0,
+			"autorestart": true,
+			"listen_timeout": 50000,
+			"kill_timeout": 5000,
+			"//env_development": {
+				"PORT": 3100,
+				"NODE_ENV": "development"
+			},
+			"//env_production": {
+				"PORT": 80,
+				"NODE_ENV": "production"
+			}
+		}
+	]
+}
