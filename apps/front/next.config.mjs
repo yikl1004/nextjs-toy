@@ -10,7 +10,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 /**
  * @template T, R
- * @param {((arg: T) => R)[]} fns[]
+ * @param {((arg: T) => R)[]} fns
  * @returns {(arg: NextConfig) => NextConfig}
  *
  * @example
@@ -26,9 +26,11 @@ const isProduction = process.env.NODE_ENV === 'production'
  * }
  * ```
  */
-function pipe(...fns) {
-	return (arg) => fns.reduce((prev, fn) => fn(prev), arg)
-}
+const pipe =
+	(...fns) =>
+	(arg) =>
+		// @ts-ignore
+		fns.reduce((prev, fn) => fn(prev), arg)
 
 const withPWA = withSerwistInit({
 	swSrc: 'src/sw.ts',

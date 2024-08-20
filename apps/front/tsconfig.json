@@ -42,9 +42,9 @@
 		".next/types/**/*.ts",
 		"next.config.mjs",
 		"jest.config.ts",
-		"./ecosystem.config.js",
-		"./public/mockServiceWorker.js",
+		"ecosystem.config.cjs",
+		"server/index.ts",
 		"@serwist/next/typings"
 	],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", "./public"]
 }
