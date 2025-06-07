@@ -14,7 +14,7 @@ module.exports = {
         worker: true,
         jest: true,
     },
-    // eslint 미적용될 폴더나 파일 명시
+    // eslint 적용 제외 경로 or 파일 명시
     ignorePatterns: ['.next/', 'node_modules/', '.public'],
     extends: [
         'next/core-web-vitals',
